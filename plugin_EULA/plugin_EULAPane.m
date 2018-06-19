@@ -17,6 +17,8 @@
 
 - (void)setTitle:(NSString *)inTitle;
 
+- (NSButton *)nextButton;
+
 - (void)setPreviousTitle:(NSString *)inTitle;
 - (void)setNextTitle:(NSString *)inTitle;
 
@@ -411,9 +413,11 @@
 {
 	NSSavePanel * tSavePanel=[NSSavePanel savePanel];
 	
-	tSavePanel.requiredFileType=@"pdf";
+	tSavePanel.allowedFileTypes=@[@"pdf"];
+	tSavePanel.directoryURL=[NSURL fileURLWithPath:NSHomeDirectory()];
+	tSavePanel.nameFieldStringValue=[self nativeLocalizedString:@"License" forLanguage:_cachedLicenseLanguage];
 	
-	NSInteger tReturnCode=[tSavePanel runModalForDirectory:NSHomeDirectory() file:[self nativeLocalizedString:@"License" forLanguage:_cachedLicenseLanguage]];
+	NSInteger tReturnCode=[tSavePanel runModal];
 	
 	if (tReturnCode!=NSFileHandlingPanelOKButton)
 		return;
@@ -544,6 +548,20 @@
 	[self setTitle:[self nativeLocalizedString:@"PaneTitle" forLanguage:tLanguage]];
 	
 	// Update Buttons
+	
+	NSButton * tNextButton=[self nextButton];
+	
+	NSRect tRectInWindow=[_bottomView convertRect:_bottomView.frame
+										   toView:tNextButton.superview];
+	
+	NSRect tButtonFrame=_printButton.frame;
+	tButtonFrame.origin.y=NSMinY(tNextButton.frame)-NSMinY(tRectInWindow);
+	_printButton.frame=tButtonFrame;
+	
+	
+	tButtonFrame=_saveButton.frame;
+	tButtonFrame.origin.y=NSMinY(tNextButton.frame)-NSMinY(tRectInWindow);
+	_saveButton.frame=tButtonFrame;
 	
 	_printButton.title=[self nativeLocalizedString:@"Print..." forLanguage:tLanguage];
 	
