@@ -525,6 +525,8 @@
 		
 		[tTextStorage endEditing];
 		
+		[_textView setTextColor:[NSColor textColor]];
+		
 		[_textView scrollRangeToVisible:NSMakeRange(0,0)];
 	}
 	
