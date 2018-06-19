@@ -28,8 +28,6 @@
 {
 	IBOutlet NSPopUpButton * _languagePopupButton;
 	
-	IBOutlet NSScrollView * _scrollView;
-	
 	IBOutlet NSTextView * _textView;
 	
 	

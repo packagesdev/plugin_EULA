@@ -700,14 +700,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">_scrollView</string>
-						<reference key="source" ref="475386498"/>
-						<reference key="destination" ref="817947953"/>
-					</object>
-					<int key="connectionID">91</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">_textView</string>
 						<reference key="source" ref="475386498"/>
 						<reference key="destination" ref="756979604"/>
@@ -1062,7 +1054,6 @@
 						<string key="_languagePopupButton">NSPopUpButton</string>
 						<string key="_printButton">NSButton</string>
 						<string key="_saveButton">NSButton</string>
-						<string key="_scrollView">NSScrollView</string>
 						<string key="_textView">NSTextView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1105,10 +1096,6 @@
 						<object class="IBToOneOutletInfo" key="_saveButton">
 							<string key="name">_saveButton</string>
 							<string key="candidateClassName">NSButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="_scrollView">
-							<string key="name">_scrollView</string>
-							<string key="candidateClassName">NSScrollView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="_textView">
 							<string key="name">_textView</string>
