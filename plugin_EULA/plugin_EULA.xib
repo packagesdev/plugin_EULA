@@ -46,14 +46,15 @@
 				<string key="NSClassName">WBEULAInstallerPane</string>
 			</object>
 			<object class="NSCustomView" id="178831453">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSButton" id="576099939">
 						<reference key="NSNextResponder" ref="178831453"/>
 						<int key="NSvFlags">260</int>
-						<string key="NSFrame">{{0, 1}, {100, 32}}</string>
+						<string key="NSFrame">{{-1, 1}, {100, 32}}</string>
 						<reference key="NSSuperview" ref="178831453"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="155284374"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="971979937">
@@ -81,8 +82,9 @@
 					<object class="NSButton" id="155284374">
 						<reference key="NSNextResponder" ref="178831453"/>
 						<int key="NSvFlags">260</int>
-						<string key="NSFrame">{{100, 1}, {100, 32}}</string>
+						<string key="NSFrame">{{99, 1}, {100, 32}}</string>
 						<reference key="NSSuperview" ref="178831453"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="626557736">
 							<int key="NSCellFlags">67108864</int>
@@ -104,6 +106,8 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{213, 35}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="576099939"/>
 				<object class="NSMutableString" key="NSClassName">
 					<characters key="NS.bytes">NSView</characters>
@@ -278,7 +282,7 @@
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomView" id="885984502">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSCustomView" id="874665060">
@@ -309,8 +313,10 @@
 													<string>NeXT Rich Text Format v1.0 pasteboard type</string>
 													<string>NeXT TIFF v4.0 pasteboard type</string>
 												</set>
-												<string key="NSFrameSize">{415, 291}</string>
+												<string key="NSFrameSize">{415, 290}</string>
 												<reference key="NSSuperview" ref="442807522"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="857604494"/>
 												<object class="NSTextContainer" key="NSTextContainer" id="404454708">
 													<object class="NSLayoutManager" key="NSLayoutManager">
 														<object class="NSTextStorage" key="NSTextStorage">
@@ -374,8 +380,9 @@
 												<nil key="NSDelegate"/>
 											</object>
 										</array>
-										<string key="NSFrameSize">{415, 291}</string>
+										<string key="NSFrameSize">{415, 290}</string>
 										<reference key="NSSuperview" ref="817947953"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="756979604"/>
 										<reference key="NSDocView" ref="756979604"/>
 										<reference key="NSBGColor" ref="102074667"/>
@@ -406,19 +413,21 @@
 										<int key="NSvFlags">-2147483392</int>
 										<string key="NSFrame">{{-30, 0}, {15, 291}}</string>
 										<reference key="NSSuperview" ref="817947953"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="442807522"/>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 										<string key="NSControlAction">_doScroller:</string>
 										<reference key="NSControlTarget" ref="817947953"/>
 										<reference key="NSTarget" ref="817947953"/>
 										<string key="NSAction">_doScroller:</string>
-										<double key="NSPercent">0.94845360517501831</double>
+										<double key="NSPercent">0.99656357388316152</double>
 									</object>
 									<object class="NSScroller" id="857604494">
 										<reference key="NSNextResponder" ref="817947953"/>
 										<int key="NSvFlags">-2147483392</int>
 										<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
 										<reference key="NSSuperview" ref="817947953"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="681842353"/>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 										<string key="NSControlAction">_doScroller:</string>
@@ -430,9 +439,10 @@
 										<double key="NSPercent">0.94565218687057495</double>
 									</object>
 								</array>
-								<string key="NSFrame">{{1, 0}, {415, 291}}</string>
+								<string key="NSFrame">{{1, 1}, {415, 290}}</string>
 								<reference key="NSSuperview" ref="874665060"/>
-								<reference key="NSNextKeyView" ref="857604494"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="442807522"/>
 								<int key="NSsFlags">133648</int>
 								<reference key="NSVScroller" ref="681842353"/>
 								<reference key="NSHScroller" ref="857604494"/>
@@ -446,6 +456,7 @@
 								<int key="NSvFlags">264</int>
 								<string key="NSFrame">{{101, 298}, {216, 26}}</string>
 								<reference key="NSSuperview" ref="874665060"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="632882147"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSPopUpButtonCell" key="NSCell" id="1011614843">
@@ -506,6 +517,7 @@
 								<array class="NSMutableArray" key="NSSubviews"/>
 								<string key="NSFrame">{{0, 290}, {420, 5}}</string>
 								<reference key="NSSuperview" ref="874665060"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="817947953"/>
 								<string key="NSOffsets">{0, 0}</string>
 								<object class="NSTextFieldCell" key="NSTitleCell">
@@ -534,12 +546,15 @@
 						</array>
 						<string key="NSFrame">{{1, 0}, {418, 330}}</string>
 						<reference key="NSSuperview" ref="885984502"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="922961496"/>
 						<string key="NSClassName">NSView</string>
 						<string key="NSExtension">NSResponder</string>
 					</object>
 				</array>
 				<string key="NSFrameSize">{418, 330}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="874665060"/>
 				<string key="NSClassName">NSView</string>
 				<string key="NSExtension">NSResponder</string>
