@@ -133,9 +133,8 @@
 	
 	if (_bundle!=nil)
 	{
-		[_textView setTextContainerInset:NSMakeSize(6.0f,6.0f)];
-		
-		[_textView setDrawsBackground:NO];
+		_textView.textContainerInset=NSMakeSize(6.0,6.0);
+		_textView.drawsBackground=NO;
 		
 		[[_textView enclosingScrollView] setDrawsBackground:NO];
 		
@@ -343,7 +342,7 @@
 
 	NSString * tLanguage=_cachedLicenseLanguage;
 	
-	if (_cachedUILanguage!=nil && [_sortedAvailableLanguages indexOfObject:_cachedUILanguage]==NSNotFound && [_sortedAvailableLanguages count]<2)
+	if (_cachedUILanguage!=nil && [_sortedAvailableLanguages indexOfObject:_cachedUILanguage]==NSNotFound && _sortedAvailableLanguages.count<2)
 	{
 		NSDictionary * tDictionary=_cachedLocalizedStrings[_conversionDictionary[_cachedUILanguage]];
 		
@@ -373,13 +372,13 @@
 	
 	[_alertWindow orderOut:self];
 	
-	if ([sender tag]==1)
+	if (sender.tag==1)
 	{
 		_licenseAgreed=YES;
 		
 		[self gotoNextPane];
 	}
-	else if ([sender tag]==2)
+	else if (sender.tag==2)
 	{
 		[NSApp terminate:self];
 	}
@@ -551,17 +550,19 @@
 	
 	NSButton * tNextButton=[self nextButton];
 	
-	NSRect tRectInWindow=[_bottomView convertRect:_bottomView.frame
-										   toView:tNextButton.superview];
-	
-	NSRect tButtonFrame=_printButton.frame;
-	tButtonFrame.origin.y=NSMinY(tNextButton.frame)-NSMinY(tRectInWindow);
-	_printButton.frame=tButtonFrame;
-	
-	
-	tButtonFrame=_saveButton.frame;
-	tButtonFrame.origin.y=NSMinY(tNextButton.frame)-NSMinY(tRectInWindow);
-	_saveButton.frame=tButtonFrame;
+	if (tNextButton.superview!=nil)
+	{
+		NSRect tRectInWindow=[_bottomView convertRect:_bottomView.frame
+											   toView:tNextButton.superview];
+		
+		NSRect tButtonFrame=_printButton.frame;
+		tButtonFrame.origin.y=NSMinY(tNextButton.frame)-NSMinY(tRectInWindow);
+		_printButton.frame=tButtonFrame;
+		
+		tButtonFrame=_saveButton.frame;
+		tButtonFrame.origin.y=NSMinY(tNextButton.frame)-NSMinY(tRectInWindow);
+		_saveButton.frame=tButtonFrame;
+	}
 	
 	_printButton.title=[self nativeLocalizedString:@"Print..." forLanguage:tLanguage];
 	
@@ -581,13 +582,13 @@
 	
 	// Center the Language Popup button
 	
-	NSRect tViewFrame=[[_languagePopupButton superview] frame];
+	NSRect tViewFrame=_languagePopupButton.superview.frame;
 	
-	NSRect tLabelFrame=[_languagePopupButton frame];
+	NSRect tLabelFrame=_languagePopupButton.frame;
 	
 	tLabelFrame.origin.x=round(NSMidX(tViewFrame)-NSWidth(tLabelFrame)*0.5)-2.;
 	
-	[_languagePopupButton setFrame:tLabelFrame];
+	_languagePopupButton.frame=tLabelFrame;
 }
 
 @end
