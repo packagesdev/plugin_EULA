@@ -548,10 +548,9 @@
 	
 	// Update Buttons
 	
-	NSButton * tNextButton=[self nextButton];
-	
-	if (tNextButton.superview!=nil)
+	if (_bottomView.superview!=nil)
 	{
+		NSButton * tNextButton=[self nextButton];
 		NSRect tRectInWindow=[_bottomView convertRect:_bottomView.frame
 											   toView:tNextButton.superview];
 		
